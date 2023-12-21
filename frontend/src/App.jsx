@@ -20,6 +20,11 @@ import PropsMap from './Components/9-12/Props-Map';
 import { useState } from 'react';
 import MapObject from './Components/9-12/Map-Object';
 import StyleComponent from './Components/9-12/StyleComponent';
+import Registercom from './Components/13-12/Register2';
+import RegisterCom from './Components/13-12/Register2';
+import LoginSub from './Components/15-12/Login2';
+import ChildToParent from './Components/16-12/Child-to-parent';
+import AllProduct from './Components/16-12/All-Product';
 
 
 function App() {
@@ -54,6 +59,10 @@ function App() {
       <Route path='props-map' element={<PropsMap Name={myName} myAge="25" changeName={ChnageName} myStudent={["Devesh","Rushabh","Krush","amit","yallapa","Dhanu","Nishat"]} />}/>
       <Route path='map-object' element={< MapObject myStudentData={player}/>}/>
       <Route path='style-component' element={<StyleComponent/>}/>
+      <Route path='register-2' element={<RegisterCom/>}/>
+      <Route path='login2' element={<LoginSub/>}/>
+      <Route path='child-to-parent' element={<ChildToParent/>}/>
+      <Route path='all-product' element={<AllProduct/>}/>
       {/* <Route/> */}
 
     </Routes>

@@ -15,8 +15,8 @@ function Navbar(){
                 <p onClick = {()=> router('./Nopagefound') }>KIDS</p>
             </div>
             <div className='flex w-20'>
-                <p onClick = {()=> router('./Login') }>LOGIN</p>
-                <p onClick={()=> router('./Register')}>REGISTER</p>
+                <p onClick = {()=> router('./Login2') }>LOGIN</p>
+                <p onClick={()=> router('./register-2')}>REGISTER</p>
             </div>
         </div>
     )

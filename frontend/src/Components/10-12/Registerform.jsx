@@ -5,7 +5,7 @@ function Registerform() {
 
     const [UserData, setUserData] = useState({ name: "", email: "", password: "" })
     
-    function handlesubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
         setUserData({ name: "", email: "", password: "" })
     }
@@ -18,7 +18,7 @@ function Registerform() {
     return (
         <div>
             <h1>Register form</h1>
-            <form onSubmit={handlesubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>Name:</label>
                 <input type="text" required onChange={handleChange} name='name' value={UserData.name} /><br /><br />
                 <label>Email:</label>
