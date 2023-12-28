@@ -17,7 +17,7 @@ import UseEffect4 from './Components/8-12/UseEffect4';
 import DynamicRouting from './Components/8-12/Dynamic-Routing';
 import UseParams from './Components/8-12/UseParams';
 import PropsMap from './Components/9-12/Props-Map';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import MapObject from './Components/9-12/Map-Object';
 import StyleComponent from './Components/9-12/StyleComponent';
 import Registercom from './Components/13-12/Register2';
@@ -25,6 +25,11 @@ import RegisterCom from './Components/13-12/Register2';
 import LoginSub from './Components/15-12/Login2';
 import ChildToParent from './Components/16-12/Child-to-parent';
 import AllProduct from './Components/16-12/All-Product';
+import SingleProduct from './Components/20-12/Single-Product';
+import AllProducts from './Components/16-12/All-Product';
+import UseMemo from './Components/22-12/UseMemo';
+import UseCallback from './Components/23-12/Use-Callback';
+import UseReduce from './Components/24-12/Use-Reduce';
 
 
 function App() {
@@ -62,7 +67,12 @@ function App() {
       <Route path='register-2' element={<RegisterCom/>}/>
       <Route path='login2' element={<LoginSub/>}/>
       <Route path='child-to-parent' element={<ChildToParent/>}/>
-      <Route path='all-product' element={<AllProduct/>}/>
+      <Route path='all-product' element={<AllProducts/>}/>
+      <Route path='/single-product/:id' element={<SingleProduct/>} />
+      < Route path='use-memo' element={<UseMemo/>}/>
+      <Route path='use-callback' element={<UseCallback/>}/>
+      <Route path='use-reduce' element={<UseReduce/>}/>
+
       {/* <Route/> */}
 
     </Routes>
