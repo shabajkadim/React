@@ -30,6 +30,7 @@ import AllProducts from './Components/16-12/All-Product';
 import UseMemo from './Components/22-12/UseMemo';
 import UseCallback from './Components/23-12/Use-Callback';
 import UseReduce from './Components/24-12/Use-Reduce';
+import ReduxCounter from './Components/31-12-Redux/ReduxCounter';
 
 
 function App() {
@@ -72,6 +73,8 @@ function App() {
       < Route path='use-memo' element={<UseMemo/>}/>
       <Route path='use-callback' element={<UseCallback/>}/>
       <Route path='use-reduce' element={<UseReduce/>}/>
+      <Route path='redux-counter' element={<ReduxCounter/>}/>
+
 
       {/* <Route/> */}
 

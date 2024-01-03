@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import {Toaster} from 'react-hot-toast'
 import AuthContext from './Context/AuthContext';
+import { Provider } from 'react-redux';
+import store from './Components/31-12-Redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,7 +38,9 @@ root.render(
   }}
 />
   <AuthContext>
+    <Provider store={store}>
     <App />
+    </Provider>
   </AuthContext>
     </BrowserRouter>
 );
