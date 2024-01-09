@@ -76,7 +76,7 @@ function App() {
       <Route path='redux-counter' element={<ReduxCounter/>}/>
 
 
-      {/* <Route/> */}
+      
 
     </Routes>
     < Footer/>
