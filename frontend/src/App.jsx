@@ -31,6 +31,10 @@ import UseMemo from './Components/22-12/UseMemo';
 import UseCallback from './Components/23-12/Use-Callback';
 import UseReduce from './Components/24-12/Use-Reduce';
 import ReduxCounter from './Components/31-12-Redux/ReduxCounter';
+import AddProduct from './Components/1-2-24-backend&react/addProduct';
+import BackendProducts from './Components/1-2-24-backend&react/BackendProducts';
+import Product from './Components/backend-practce/Product';
+import SingleProductData from './Components/backend-practce/SingleProductData';
 
 
 function App() {
@@ -74,6 +78,11 @@ function App() {
       <Route path='use-callback' element={<UseCallback/>}/>
       <Route path='use-reduce' element={<UseReduce/>}/>
       <Route path='redux-counter' element={<ReduxCounter/>}/>
+      <Route path='add-product' element={<AddProduct/>} />
+      <Route path='show' element={< BackendProducts/>} />
+      <Route path='product-data' element={<Product/>} />
+      <Route path='single-product-data' element={<SingleProductData/>} />
+      
 
 
       

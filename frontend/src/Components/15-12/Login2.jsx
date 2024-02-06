@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { json, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { MyContext } from "../../Context/AuthContext";
+import axios from "axios";
 
 
 const LoginSub =()=>{
     const[loginData,setLoginData]=useState({email:"", password:""});
 
-    const{state, dispatch}= useContext( MyContext)
+    const{state, dispatch}= useContext(MyContext)
     console.log(state?.user,"state?.user")
 
     // console.log(loginData,"loginData")
@@ -23,8 +24,8 @@ const LoginSub =()=>{
         e.preventDefault();
         if(loginData.email && loginData.password){
           try{    
-            // const response = await axios.post('http://localhost:8000/login', { loginData })
-            const response = {data: {success:true, message:"Login successful" , user:{name:"Shahabaj" , Email:"Shahabaj18@gmail.com"} ,token:"KDFHKJDH5%6^$LGJ%LKJFDB#SHAHABAJ#%GTHYJJ%^TRNBFHHHK" } }
+            const response = await axios.post('http://localhost:8000/api/v1/auth/login', { loginData })
+            // const response = {data: {success:true, message:"Login successful" , user:{name:"Shahabaj" , Email:"Shahabaj18@gmail.com"} ,token:"KDFHKJDH5%6^$LGJ%LKJFDB#SHAHABAJ#%GTHYJJ%^TRNBFHHHK" } }
             if(response.data.success){
                 toast.success(response.data.message)
                 dispatch({type:"LOGIN" , payload:response.data.user})
@@ -35,7 +36,7 @@ const LoginSub =()=>{
             
 
           }catch(error){
-            toast.error(error.response.data.error)
+            toast.error(error.response.data.message)
           }
         }else{
             alert("password and email are Required")

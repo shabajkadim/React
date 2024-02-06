@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import {useNavigate} from 'react-router-dom'
 
 
@@ -6,19 +8,22 @@ import {useNavigate} from 'react-router-dom'
 const RegisterCom =()=>{
     const router = useNavigate();
 
-    const[userData ,setUserData]=useState({ name:"", email:"", password:"", confirmpassword:"" })
+    const[userData ,setUserData]=useState({ name:"", email:"", password:"", confirmPassword:"" })
     console.log(userData,"- userData")
 
 
-    function handleSumit(e){
+   async function handleSumit(e){
         e.preventDefault();
-        if(userData.name && userData.email && userData.password && userData.confirmpassword){
-            if(userData.password === userData.confirmpassword){
+        if(userData.name && userData.email && userData.password && userData.confirmPassword){
+            if(userData.password === userData.confirmPassword){
                 try{
-                    const response={data:{success:true,massage:"Ragistation complete"}}
+
+                    const response = await axios.post('http://localhost:8000/api/v1/auth/register',{userData})
+
+                    // const response={data:{success:true,massage:"Ragistation complete"}}
                     if(response.data.success===true){
-                        alert(response.data.massage)
-                        setUserData({name:"",email:"" , password:"", confirmpassword:""})
+                        toast.success(response.data.message)
+                        setUserData({name:"",email:"" , password:"", confirmPassword:""})
                         router('/login2')
                     }
                 }catch(error){
@@ -27,10 +32,10 @@ const RegisterCom =()=>{
                 }
 
             }else{
-                alert("password and confirmoassword not match")
+                toast.error("password and confirmoassword not match")
             }
         }else{
-            alert("All feilds are required")
+            toast.error("All feilds are required")
         }
        
 
@@ -51,7 +56,7 @@ const RegisterCom =()=>{
                 <label>Password:-</label>
                 <input type="password" required onChange={handleChange} name='password' value={userData.password} /><br/><br/>
                 <label>Confirm Password:-</label>
-                <input type="password" required onChange={handleChange} name='confirmpassword' value={userData.confirmpassword} /><br/><br/>
+                <input type="password" required onChange={handleChange} name='confirmPassword' value={userData.confirmPassword} /><br/><br/>
                 <input type='submit' Value='Register'/>
 
             </form>

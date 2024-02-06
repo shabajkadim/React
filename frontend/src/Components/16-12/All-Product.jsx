@@ -24,7 +24,7 @@ const AllProducts = ()=>{
     }
 
     function Routing(id){
-        // toast(id)
+        
         router(`/single-product/${id}`);
         
     }
