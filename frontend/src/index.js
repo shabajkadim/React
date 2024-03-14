@@ -8,6 +8,7 @@ import {Toaster} from 'react-hot-toast'
 import AuthContext from './Context/AuthContext';
 import { Provider } from 'react-redux';
 import store from './Components/31-12-Redux/store';
+import cors from 'cors'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -34,7 +34,12 @@ import ReduxCounter from './Components/31-12-Redux/ReduxCounter';
 import AddProduct from './Components/1-2-24-backend&react/addProduct';
 import BackendProducts from './Components/1-2-24-backend&react/BackendProducts';
 import Product from './Components/backend-practce/Product';
-import SingleProductData from './Components/backend-practce/SingleProductData';
+import SingleProductData from './Components/backend-practce/ReadProductData';
+import ReadProductData from './Components/backend-practce/ReadProductData';
+import Homepage from './Components/backend-practce/7-feb-24/Home';
+import Registerpage from './Components/backend-practce/7-feb-24/Register-page';
+import Login4page from './Components/backend-practce/7-feb-24/Loginpage';
+import NikeAddProduct from './Components/backend-practce/7-feb-24/NikeAddProduct';
 
 
 function App() {
@@ -73,15 +78,21 @@ function App() {
       <Route path='login2' element={<LoginSub/>}/>
       <Route path='child-to-parent' element={<ChildToParent/>}/>
       <Route path='all-product' element={<AllProducts/>}/>
-      <Route path='/single-product/:id' element={<SingleProduct/>} />
-      < Route path='use-memo' element={<UseMemo/>}/>
+      <Route path='use-memo' element={<UseMemo/>}/>
       <Route path='use-callback' element={<UseCallback/>}/>
       <Route path='use-reduce' element={<UseReduce/>}/>
       <Route path='redux-counter' element={<ReduxCounter/>}/>
       <Route path='add-product' element={<AddProduct/>} />
       <Route path='show' element={< BackendProducts/>} />
-      <Route path='product-data' element={<Product/>} />
-      <Route path='single-product-data' element={<SingleProductData/>} />
+      <Route path='add-product-data' element={<Product/>} />
+      <Route path='read-product-data' element={<ReadProductData/>} />
+      <Route path='/single-product/:id' element={<SingleProduct/>} />
+      <Route path='home-page' element={<Homepage/>} />
+      <Route path='register-page' element={<Registerpage/>} />
+      <Route path='Login4page' element={<Login4page/>} />
+      <Route path='nike-add-product' element={<NikeAddProduct/>} />
+
+      {/* <Route path='single-product-data:id' element={<SingleProductData/>} /> */}
       
 
 

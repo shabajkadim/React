@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 
 const Product = () => {
     const [data ,setData]=useState({title:"", image:"", price:"", category:"", quantity:''  })
-
+    const router=useNavigate()
     async function handleSubmit(e){
         e.preventDefault()
         if(data.title && data.image && data.price && data.category && data.quantity){
@@ -13,6 +14,7 @@ const Product = () => {
                 const response = await axios.post("http://localhost:8000/api/v1/product/add-product",{data})
                     toast.success(response.data.message)
                     setData({title:"", image:"", price:"", category:"", quantity:''  })
+                    router('/read-product-data')
                 
             }catch(error){
                 toast.error(error.response.data.error)

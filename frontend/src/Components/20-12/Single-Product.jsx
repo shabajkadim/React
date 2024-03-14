@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import api from "../../helper/AxiosConfig";
 
 
 
@@ -13,9 +14,12 @@ const SingleProduct = () =>{
 
     async function getSingleProductData(){
         try{
-              const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+              const response = await api.post('/product/get-single-product',{productId:id});
               // console.log(response.data)
-             setProductData(response.data)
+              if(response.data.success){
+             setProductData(response.data.product)
+
+              }
         }catch(error){
             console.log(error)
         }
@@ -30,10 +34,11 @@ const SingleProduct = () =>{
 
     return(
         <div >
-            <h1 >{productData.title}</h1>
-            <img  src={productData.image}/> 
-            <div><strong>${productData.price} Buy</strong></div>
-            <div><p>{productData.description}</p></div>
+            <h1 >{productData?.title}</h1>
+            <img  src={productData?.image}/> 
+            <div><strong>${productData?.price} Buy</strong></div>
+            <div><p>{productData?.category}</p></div>
+            <div><p>{productData?.quantity}</p> </div>
         </div>
     )
 }
