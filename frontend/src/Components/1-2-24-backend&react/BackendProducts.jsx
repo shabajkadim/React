@@ -8,7 +8,7 @@ const BackendProducts = () => {
 
     async function GettingData(){
         try {
-            const response = await axios.get('http://localhost:8000/api/v1/product/get-product');
+            const response = await axios.get('http://localhost:8000/api/v1/product/get-product',{allProductData});
             setAllProductData(response.data);
             console.log(allProductData);   // here console will giv empty values because state takes time to update . for that i have created new useeffect if it changes then it will log it 
             setloading(false)

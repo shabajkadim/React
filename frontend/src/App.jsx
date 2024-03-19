@@ -92,7 +92,7 @@ function App() {
       <Route path='Login4page' element={<Login4page/>} />
       <Route path='nike-add-product' element={<NikeAddProduct/>} />
 
-      {/* <Route path='single-product-data:id' element={<SingleProductData/>} /> */}
+      <Route path='single-product-data:id' element={<SingleProductData/>} />
       
 
 
